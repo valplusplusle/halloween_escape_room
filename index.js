@@ -10,7 +10,7 @@ const { v4: uuidv4 } = require('uuid');
 var ip = require("ip");
 const fetch = require('node-fetch');
 var serverIpAddress = "0.0.0.0"
-const port = 6969;
+const port = 8989;
 const sound = require('sound-play')
 
 expressApp.use(bodyParser.json({
