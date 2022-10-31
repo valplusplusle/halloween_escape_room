@@ -1,0 +1,44 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <button id="startButton" onclick="gameStarted()">START GAME</button>
+    </body>    
+    <script type="text/javascript">
+
+        function gameStarted() {
+            document.getElementById("startButton").innerHTML = "GAME STARTED"
+        }
+
+        const socket = new WebSocket('ws://localhost:6969');
+
+        socket.addEventListener('message', (event) => {
+            console.log('Message from server ', event.data);
+            if(event.data == "playStartAudio") {
+                let beat = new Audio('./start.mp3');
+                beat.play()
+            }
+
+            if(event.data == "playhorror1") {
+                let beat = new Audio('./scream.mp3');
+                beat.play()
+            }
+
+            if(event.data == "playhorror2") {
+                let beat = new Audio('./shock.mp3');
+                beat.play()
+            }
+
+            if(event.data == "playhorror3") {
+                let beat = new Audio('./ghost.mp3');
+                beat.play()
+            }
+
+            if(event.data == "playhorror4") {
+                let beat = new Audio('./scream.mp3');
+                beat.play()
+            }
+        });
+    </script>
+</html>
