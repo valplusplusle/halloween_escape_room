@@ -11,7 +11,7 @@
             document.getElementById("startButton").innerHTML = "GAME STARTED"
         }
 
-        const socket = new WebSocket('ws://localhost:8989');
+        const socket = new WebSocket('ws://blank42.de:8989');
 
         socket.addEventListener('message', (event) => {
             console.log('Message from server ', event.data);
